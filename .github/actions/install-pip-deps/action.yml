@@ -6,8 +6,8 @@ runs:
     - name: Print step name
       run: echo "Installing all required depdendencies.."
       working-directory: ./deps
-      shell: sh
+      shell: cmd
     - name: Install deps
       run: pip install -r requirements.txt
       working-directory: ./deps
-      shell: sh
+      shell: cmd
