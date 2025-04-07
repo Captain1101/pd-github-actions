@@ -1,0 +1,24 @@
+name: "Run API tests"
+dascription: "Composite action to execute API tests"
+inputs:
+  environment:
+    description: "Env where to depoloy app"
+    required: true
+  test-suite:
+    description: "Testing suite"
+    default: "greetings"
+runs:
+  using: composite
+  steps:
+    - name: Print step name
+      run: echo "Testing ${{ inputs.environment }} has started.."
+      working-directory: ./test
+      shell: bash
+    - name: Install all dependencies
+      run: npm install
+      working-directory: ./test
+      shell: bash
+    - name: Run API tests
+      run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite }}_${{ inputs.environment }}
+      working-directory: ./test
+      shell: bash

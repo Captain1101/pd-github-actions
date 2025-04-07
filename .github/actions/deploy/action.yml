@@ -1,0 +1,28 @@
+name: "Deploy node app"
+dascription: "Composite action to deploy node app using pm2"
+inputs:
+  environment:
+    description: "Env where to depoloy app"
+    required: true
+  port:
+    description: "port"
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Print step name
+      run: echo "Deployment to ${{ inputs.environment }} has started.."
+      working-directory: ./deploy
+      shell: bash
+    - name:
+      run:
+      working-directory: ./deploy
+      shell: bash
+    - name: Delete old process
+      run: pm2 delete "greetings-app-${{ inputs.environment }}" || exit 0
+      working-directory: ./deploy
+      shell: bash
+    - name: start py app process
+      run: pm2 start app.py --name "greetings-app-${{ inputs.environment }}" -- --port ${{ inputs.port }}
+      working-directory: ./deploy
+      shell: bash
