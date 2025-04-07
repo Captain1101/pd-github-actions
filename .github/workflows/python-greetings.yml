@@ -3,7 +3,7 @@ name: python-greetings
 on:
   push:
     branches: ["main"]
-  workflowdispatch:
+  workflow_dispatch:
 
 jobs:
   install-pip-deps:
