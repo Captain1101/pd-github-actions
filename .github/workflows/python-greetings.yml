@@ -1,4 +1,4 @@
-name: Piegades konveijers izmantojot riku Github Actions
+name: python-greetings
 
 on:
   push:
