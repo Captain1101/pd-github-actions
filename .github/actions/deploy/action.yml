@@ -13,16 +13,16 @@ runs:
     - name: Print step name
       run: echo "Deployment to ${{ inputs.environment }} has started.."
       working-directory: ./deploy
-      shell: bash
+      shell: sh
     - name:
       run:
       working-directory: ./deploy
-      shell: bash
+      shell: sh
     - name: Delete old process
       run: pm2 delete "greetings-app-${{ inputs.environment }}" || exit 0
       working-directory: ./deploy
-      shell: bash
+      shell: sh
     - name: start py app process
       run: pm2 start app.py --name "greetings-app-${{ inputs.environment }}" -- --port ${{ inputs.port }}
       working-directory: ./deploy
-      shell: bash
+      shell: sh
