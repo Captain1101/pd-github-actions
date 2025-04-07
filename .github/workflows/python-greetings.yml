@@ -1,0 +1,17 @@
+name: Piegades konveijers izmantojot riku Github Actions
+
+on:
+  push:
+    branches: ["main"]
+  workflowdispatch:
+
+jobs:
+  install-pip-deps:
+  deploy-to-dev:
+  tests-on-dev:
+  deploy-to-staging:
+  tests-on-staging:
+  deploy-to-preprod:
+  tests-on-preprod:
+  deploy-to-prod:
+  Tests-on-prod:
