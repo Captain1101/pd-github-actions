@@ -30,5 +30,14 @@ runs:
       working-directory: deploy
       shell: powershell
     - name: Install all dependencies #delet
+      run: Start-Sleep -s 5
+      working-directory: deploy
+      shell: powershell
+    - name: Install all dependencies #delet
+      run: pm2 list
+      working-directory: deploy
+      shell: powershell
+
+    - name: Install all dependencies #delet
       run: pm2 list
       shell: powershell
