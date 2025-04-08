@@ -18,13 +18,6 @@ runs:
         clean: "false"
 
     - name: Print step name
-      run: ls
-      shell: powershell
-    - name: Print step name
-      run: ls
-      working-directory: deps
-      shell: powershell
-    - name: Print step name
       run: echo "Installing all required depdendencies.."
       working-directory: deps
       shell: powershell

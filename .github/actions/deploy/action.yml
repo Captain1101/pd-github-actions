@@ -10,6 +10,12 @@ inputs:
 runs:
   using: composite
   steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: "mtararujs/python-greetings"
+        ref: "main"
+        path: "deploy"
+        clean: "false"
     - name: Print step name
       run: echo "Deployment to ${{inputs.environment}} has started.."
       working-directory: deploy
@@ -28,18 +34,9 @@ runs:
     - name: Install all dependencies #delet
       run: |
         pm2 list
-        Start-Sleep -s 5
         pm2 list
       working-directory: deploy
       shell: powershell
-    # - name: Install all dependencies #delet
-    #   run: Start-Sleep -s 5
-    #   working-directory: deploy
-    #   shell: powershell
-    # - name: Install all dependencies #delet
-    #   run: pm2 list
-    #   working-directory: deploy
-    #   shell: powershell
 
     - name: Install all dependencies #delet
       run: pm2 list
