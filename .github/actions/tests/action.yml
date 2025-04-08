@@ -12,13 +12,13 @@ runs:
   steps:
     - name: Print step name
       run: echo "Testing ${{ inputs.environment }} has started.."
-      working-directory: ./test
-      shell: cmd
+      working-directory: test
+      shell: powershell
     - name: Install all dependencies
       run: npm install
-      working-directory: ./test
-      shell: cmd
+      working-directory: test
+      shell: powershell
     - name: Run API tests
       run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite }}_${{ inputs.environment }}
-      working-directory: ./test
-      shell: cmd
+      working-directory: test
+      shell: powershell

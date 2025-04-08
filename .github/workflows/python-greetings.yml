@@ -35,9 +35,12 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
+      - name: Print step name #delete step
+        run: ls
+        shell: powershell
+      # - uses: actions/checkout@v4
+      #   with:
+      #     repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/deploy
         with:
           environment: "dev"
@@ -51,9 +54,9 @@ jobs:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
+      # - uses: actions/checkout@v4
+      #   with:
+      #     repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/tests
         with:
           environment: "dev"
