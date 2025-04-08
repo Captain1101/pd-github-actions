@@ -11,6 +11,16 @@ jobs:
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v4
+      - name: Create subfolders
+        run: |
+          mkdir deps
+          mkdir deploy
+          mkdir test
+      - uses: actions/checkout@v4
+        with:
+          repository: "mtararujs/python-greetings"
+          ref: "main"
+          path: "deps"
       - uses: ./.github/actions/install-pip-deps
 
   deploy-to-dev:

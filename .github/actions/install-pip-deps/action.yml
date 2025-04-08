@@ -3,19 +3,6 @@ description: "what name says"
 runs:
   using: composite
   steps:
-    # - name: Checkout main repo
-    #   uses: actions/checkout@v4
-    - name: Create subfolders
-      run: |
-        mkdir deps
-        mkdir deploy
-        mkdir test
-    - uses: actions/checkout@v4
-      with:
-        repository: "mtararujs/python-greetings"
-        ref: "main"
-        path: "deps"
-
     - name: Print step name
       run: echo "Installing all required depdendencies.."
       working-directory: deps
