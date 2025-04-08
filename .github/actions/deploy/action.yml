@@ -11,7 +11,7 @@ runs:
   using: composite
   steps:
     - name: Print step name
-      run: echo "Deployment to ${{ inputs.environment }} has started.."
+      run: echo "Deployment to ${{inputs.environment}} has started.."
       working-directory: deploy
       shell: powershell
     # - name:
@@ -19,10 +19,10 @@ runs:
     #   working-directory: deploy
     #   shell: powershell
     - name: Delete old process
-      run: pm2 delete "greetings-app-${{ inputs.environment }}" "&" set "errorlevel=0"
+      run: pm2 delete "greetings-app-${{inputs.environment}}" "&" set "errorlevel=0"
       working-directory: deploy
       shell: powershell
     - name: start py app process
-      run: pm2 start app.py --name "greetings-app-${{ inputs.environment }}" -- --port ${{ inputs.port }}
+      run: pm2 start app.py -n "greetings-app-${{inputs.environment}}" -- --port ${{inputs.port}}
       working-directory: deploy
       shell: powershell
