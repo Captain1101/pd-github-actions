@@ -1,3 +1,9 @@
+# 100+ iteracijas un guides nepalidzeja atrast problemu kapec <& set "errorlevel=0"> vai <& EXIT /B 0> nestrada
+# Bet saja gadijuma "pm2 start app.py" strada bez veca process dzesanas jo github actions
+
+# neka nevar dabut pm2 procesu parlekt starp jobs, "clean: false" ari nepalidzeja
+# bet citadi "npm run greetings greetings_dev" iesledzas
+
 name: python-greetings
 
 on:
@@ -11,11 +17,6 @@ jobs:
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v4
-      # - name: Create subfolders
-      #   run: |
-      #     mkdir deps
-      #     mkdir deploy
-      #     mkdir test
       - uses: actions/checkout@v4
         with:
           repository: "mtararujs/python-greetings"
