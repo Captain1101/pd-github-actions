@@ -35,9 +35,9 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-      - name: Print step name #delete step
-        run: ls
-        shell: powershell
+      # - name: Print step name #delete step
+      #   run: ls
+      #   shell: powershell
       # - uses: actions/checkout@v4
       #   with:
       #     repository: "Captain1101/pd-github-actions"
