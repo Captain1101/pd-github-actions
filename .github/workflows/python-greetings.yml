@@ -48,6 +48,7 @@ jobs:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
+          clean: "false"
       # - uses: actions/checkout@v4
       #   with:
       #     repository: "Captain1101/pd-github-actions"
