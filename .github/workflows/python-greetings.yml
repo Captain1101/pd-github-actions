@@ -35,6 +35,7 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
+          clean: "false"
       - uses: ./.github/actions/deploy
         with:
           environment: "dev"
@@ -48,7 +49,7 @@ jobs:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
-          clean: "false"
+          # clean: "false" #????
       # - uses: actions/checkout@v4
       #   with:
       #     repository: "Captain1101/pd-github-actions"
