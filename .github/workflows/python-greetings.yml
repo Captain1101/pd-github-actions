@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v4
-      - name: Create subfolders
-        run: |
-          mkdir deps
-          mkdir deploy
-          mkdir test
+      # - name: Create subfolders
+      #   run: |
+      #     mkdir deps
+      #     mkdir deploy
+      #     mkdir test
       - uses: actions/checkout@v4
         with:
           repository: "mtararujs/python-greetings"
@@ -31,15 +31,10 @@ jobs:
         with:
           repository: "mtararujs/python-greetings"
           ref: "main"
-          # path: "deploy"
-          # clean: "false"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
-          ref: "main"
           path: "deploy"
-
-      - uses: ./deploy/.github/actions/deploy
+          # clean: "false"
+          # clean:false
+      - uses: ./.github/actions/deploy
         with:
           environment: "dev"
           port: 7001
@@ -53,12 +48,8 @@ jobs:
           ref: "main"
           path: "test"
           # clean: "false"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
-          ref: "main"
-          path: "test"
-      - uses: ./test/.github/actions/tests
+          # clean:false
+      - uses: ./.github/actions/tests
         with:
           environment: "dev"
           test-suite: "greetings"
