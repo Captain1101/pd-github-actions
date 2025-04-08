@@ -33,7 +33,6 @@ jobs:
           ref: "main"
           path: "deploy"
           # clean: "false"
-          # clean:false
       - uses: ./.github/actions/deploy
         with:
           environment: "dev"
@@ -48,7 +47,6 @@ jobs:
           ref: "main"
           path: "test"
           # clean: "false"
-          # clean:false
       - uses: ./.github/actions/tests
         with:
           environment: "dev"

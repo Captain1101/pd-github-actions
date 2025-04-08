@@ -15,7 +15,9 @@ runs:
       working-directory: test
       shell: powershell
 
-    - name: Install all dependencies #delet
+    # neka nevar dabut pm2 procesu parlekt starp jobs, "clean: false" ari nepalidzeja
+    # bet citadi "npm run greetings greetings_dev" iesledzas
+    - name: Test runnin processes with pm2
       run: pm2 list
       working-directory: test
       shell: powershell

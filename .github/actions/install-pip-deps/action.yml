@@ -1,4 +1,4 @@
-name: "Install pip dependencies"
+name: "Install dependencies"
 description: "what name says"
 runs:
   using: composite
@@ -7,6 +7,7 @@ runs:
       run: echo "Installing all required depdendencies.."
       working-directory: deps
       shell: powershell
+
     - name: Print step name
       run: "pip install -r requirements.txt"
       working-directory: deps
