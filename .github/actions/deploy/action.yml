@@ -34,3 +34,8 @@ runs:
       run: pm2 start app.py -n "greetings-app-${{inputs.environment}}" -- -- --port ${{inputs.port}}
       working-directory: deploy
       shell: powershell
+
+    - name: Install all dependencies #delet
+      run: pm2 list
+      working-directory: deploy
+      shell: powershell
