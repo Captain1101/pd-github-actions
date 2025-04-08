@@ -21,9 +21,9 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deps"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
+      # - uses: actions/checkout@v4
+      #   with:
+      #     repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/install-pip-deps
 
   deploy-to-dev:
