@@ -10,12 +10,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v4
-      with:
-        repository: "mtararujs/course-js-api-framework"
-        ref: "main"
-        path: "test"
-
     - name: Print step name
       run: echo "Testing ${{ inputs.environment }} has started.."
       working-directory: test
