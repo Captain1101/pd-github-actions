@@ -32,8 +32,12 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-          # clean: "false"
+          clean: "false"
           # clean: false
+      - uses: actions/checkout@v4
+        with:
+          repository: "Captain1101/pd-github-actions"
+          ref: "main"
       - uses: ./.github/actions/deploy
         with:
           environment: "dev"
@@ -42,17 +46,17 @@ jobs:
     runs-on: self-hosted
     needs: [deploy-to-dev]
     steps:
-      - name: Install all dependencies #delet
-        run: pm2 list
-        working-directory: test
-        shell: powershell
       - uses: actions/checkout@v4
         with:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
-          # clean: "false"
-          clean: false
+          clean: "false"
+          # clean: false
+      - uses: actions/checkout@v4
+        with:
+          repository: "Captain1101/pd-github-actions"
+          ref: "main"
       - uses: ./.github/actions/tests
         with:
           environment: "dev"
@@ -67,6 +71,8 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
+          clean: "false"
+
       - uses: ./.github/actions/deploy
         with:
           environment: "stg"
