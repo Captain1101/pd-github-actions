@@ -15,10 +15,10 @@ runs:
       working-directory: deploy
       shell: powershell
 
-    - name: Delete old process
-      run: pm2 delete greetings-app-${{inputs.environment}} "&" set "errorlevel=0"
-      working-directory: deploy
-      shell: powershell
+    # - name: Delete old process
+    #   run: pm2 delete greetings-app-${{inputs.environment}} "&" set "errorlevel=0"
+    #   working-directory: deploy
+    #   shell: powershell
 
     - name: start py app process
       run: pm2 start app.py -n "greetings-app-${{inputs.environment}}" -- -- --port ${{inputs.port}}
@@ -28,6 +28,7 @@ runs:
     - name: Install all dependencies #delet
       run: |
         pm2 list
+        Start-Sleep -s 5
         pm2 list
       working-directory: deploy
       shell: powershell
