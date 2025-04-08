@@ -32,8 +32,8 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-          clean: "false"
-          # clean:false
+          # clean: "false"
+          clean: false
       - uses: ./.github/actions/deploy
         with:
           environment: "dev"
