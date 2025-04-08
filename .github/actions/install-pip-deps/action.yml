@@ -4,10 +4,10 @@ runs:
   using: composite
   steps:
     - name: Print step name
-      run: ls -a
+      run: ls
       shell: pwsh
     - name: Print step name
-      run: ls -a
+      run: ls
       working-directory: deps
       shell: pwsh
     - name: Print step name
