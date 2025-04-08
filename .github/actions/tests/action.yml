@@ -36,3 +36,9 @@ runs:
       run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite }}_${{ inputs.environment }}
       working-directory: test
       shell: powershell
+
+    - uses: actions/checkout@v4
+      with:
+        repository: "Captain1101/pd-github-actions"
+        ref: "main"
+        clean: "false" #????
