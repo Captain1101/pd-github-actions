@@ -26,17 +26,20 @@ runs:
       shell: powershell
 
     - name: Install all dependencies #delet
-      run: pm2 list
+      run: |
+        pm2 list
+        Start-Sleep -s 5
+        pm2 list
       working-directory: deploy
       shell: powershell
-    - name: Install all dependencies #delet
-      run: Start-Sleep -s 5
-      working-directory: deploy
-      shell: powershell
-    - name: Install all dependencies #delet
-      run: pm2 list
-      working-directory: deploy
-      shell: powershell
+    # - name: Install all dependencies #delet
+    #   run: Start-Sleep -s 5
+    #   working-directory: deploy
+    #   shell: powershell
+    # - name: Install all dependencies #delet
+    #   run: pm2 list
+    #   working-directory: deploy
+    #   shell: powershell
 
     - name: Install all dependencies #delet
       run: pm2 list
