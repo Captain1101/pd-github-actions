@@ -26,6 +26,6 @@ runs:
       shell: powershell
 
     - name: Run API tests
-      run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite }}_${{ inputs.environment }} || true
+      run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite }}_${{ inputs.environment }}
       working-directory: test
       shell: powershell
