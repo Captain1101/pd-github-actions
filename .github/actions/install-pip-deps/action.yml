@@ -15,7 +15,6 @@ runs:
         repository: "mtararujs/python-greetings"
         ref: "main"
         path: "deps"
-        clean: "false"
 
     - name: Print step name
       run: echo "Installing all required depdendencies.."

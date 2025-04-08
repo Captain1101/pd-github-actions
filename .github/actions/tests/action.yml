@@ -15,7 +15,6 @@ runs:
         repository: "mtararujs/course-js-api-framework"
         ref: "main"
         path: "test"
-        clean: "false" #????
 
     - name: Print step name
       run: echo "Testing ${{ inputs.environment }} has started.."
@@ -36,9 +35,3 @@ runs:
       run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite }}_${{ inputs.environment }}
       working-directory: test
       shell: powershell
-
-    - uses: actions/checkout@v4
-      with:
-        repository: "Captain1101/pd-github-actions"
-        ref: "main"
-        clean: "false" #????
