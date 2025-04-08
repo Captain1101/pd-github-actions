@@ -31,9 +31,9 @@ runs:
     #   shell: powershell
 
     - name: start py app process
-      #run: start /B pm2 start app.py -n "greetings-app-${{inputs.environment}}" -- -- --port ${{inputs.port}}
-      run: |
-        & pm2 start app.py -n "greetings-app-${{ inputs.environment }}" -- -- --port ${{ inputs.port }}      working-directory: deploy
+      run: pm2 start app.py -n "greetings-app-${{inputs.environment}}" -- -- --port ${{inputs.port}}
+      # run: |
+      #   & pm2 start app.py -n "greetings-app-${{ inputs.environment }}" -- -- --port ${{ inputs.port }}      working-directory: deploy
       shell: powershell
 
     - name: Install all dependencies #delet
