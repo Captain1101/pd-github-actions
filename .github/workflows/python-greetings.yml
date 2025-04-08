@@ -42,13 +42,17 @@ jobs:
     runs-on: self-hosted
     needs: [deploy-to-dev]
     steps:
+      - name: Install all dependencies #delet
+        run: pm2 list
+        working-directory: test
+        shell: powershell
       - uses: actions/checkout@v4
         with:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
-          clean: "false"
-          # clean:false
+          # clean: "false"
+          clean: false
       - uses: ./.github/actions/tests
         with:
           environment: "dev"
