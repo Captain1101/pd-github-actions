@@ -19,15 +19,16 @@ runs:
     #   run: pm2 delete greetings-app-${{inputs.environment}} "&" set "errorlevel=0"
     #   working-directory: deploy
     #   shell: powershell
-    - name: Install all dependencies #
-      run: npm install
-      working-directory: deploy
-      shell: powershell
 
-    - name: Install all dependencies #
-      run: npm install pm2
-      working-directory: deploy
-      shell: powershell
+    # - name: Install all dependencies #
+    #   run: npm install
+    #   working-directory: deploy
+    #   shell: powershell
+
+    # - name: Install all dependencies #
+    #   run: npm install pm2
+    #   working-directory: deploy
+    #   shell: powershell
 
     - name: start py app process
       run: pm2 start app.py -n "greetings-app-${{inputs.environment}}" -- -- --port ${{inputs.port}}
