@@ -4,9 +4,17 @@ runs:
   using: composite
   steps:
     - name: Print step name
-      run: |
-        echo "Installing all required depdendencies.."
-        ls -a
-        "pip install -r requirements.txt"
+      run: ls -a
+      shell: cmd
+    - name: Print step name
+      run: ls -a
+      working-directory: deps
+      shell: cmd
+    - name: Print step name
+      run: echo "Installing all required depdendencies.."
+      working-directory: deps
+      shell: cmd
+    - name: Print step name
+      run: "pip install -r requirements.txt"
       working-directory: deps
       shell: cmd
