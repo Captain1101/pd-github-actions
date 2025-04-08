@@ -35,9 +35,6 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-      # - uses: actions/checkout@v4
-      #   with:
-      #     repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/deploy
         with:
           environment: "dev"
@@ -68,9 +65,6 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/deploy
         with:
           environment: "stg"
@@ -84,9 +78,6 @@ jobs:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/tests
         with:
           environment: "stg"
@@ -101,9 +92,6 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/deploy
         with:
           environment: "preprod"
@@ -117,9 +105,6 @@ jobs:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/tests
         with:
           environment: "preprod"
@@ -134,9 +119,6 @@ jobs:
           repository: "mtararujs/python-greetings"
           ref: "main"
           path: "deploy"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/deploy
         with:
           environment: "prod"
@@ -150,9 +132,6 @@ jobs:
           repository: "mtararujs/course-js-api-framework"
           ref: "main"
           path: "test"
-      - uses: actions/checkout@v4
-        with:
-          repository: "Captain1101/pd-github-actions"
       - uses: ./.github/actions/tests
         with:
           environment: "prod"
