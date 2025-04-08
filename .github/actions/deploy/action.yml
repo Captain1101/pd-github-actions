@@ -31,7 +31,7 @@ runs:
     #   shell: powershell
 
     - name: start py app process
-      run: pm2 restart app.py -n "greetings-app-${{inputs.environment}}" -- -- --port ${{inputs.port}}
+      run: pm2 start app.py -n "greetings-app-${{inputs.environment}}" -- -- --port ${{inputs.port}}
       # run: |
       #   & pm2 start app.py -n "greetings-app-${{ inputs.environment }}" -- -- --port ${{ inputs.port }}      working-directory: deploy
       shell: powershell
